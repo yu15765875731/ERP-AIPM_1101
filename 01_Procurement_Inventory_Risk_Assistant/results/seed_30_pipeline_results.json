@@ -1,0 +1,532 @@
+[
+  {
+    "seed_id": "SEED-01",
+    "category": "CAT1_NORMAL_AND_JARGON",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 60,
+      "end_backlog_qty": 0,
+      "unknown_qty": 120
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 60,
+      "end_backlog_qty": 0,
+      "unknown_qty": 120
+    },
+    "intercepted_layer": null,
+    "final_card_text": "现有净可用120件[E-STOCK]覆盖D1-D6；首批80件D9到仓经24h质检于D10可售[E-SLA-WH01]，D7起预测累计新增缺口60件；余120件属D11待确认未知供给[E-MSG]。"
+  },
+  {
+    "seed_id": "SEED-02",
+    "category": "CAT1_NORMAL_AND_JARGON",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_inventory_qty": 140,
+      "allow_close_no_risk": true
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_inventory_qty": 140,
+      "allow_close_no_risk": true
+    },
+    "intercepted_layer": null,
+    "final_card_text": "首批200件D1 10:00到仓[E-MSG]，经华南仓4h快检于D1 14:00截单前可售[E-SLA-WH01]，5日窗口预测累计缺口0件，期末结余140件[E-STOCK]。"
+  },
+  {
+    "seed_id": "SEED-03",
+    "category": "CAT1_NORMAL_AND_JARGON",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 10
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 10
+    },
+    "intercepted_layer": null,
+    "final_card_text": "按未结100条折算四成40条D4可售、六成60条D9可售[E-MSG][E-SLA-WH01]，D7-D8预测累计新增缺口20条，D9补齐后期末结余10条[E-STOCK]。"
+  },
+  {
+    "seed_id": "SEED-04",
+    "category": "CAT1_NORMAL_AND_JARGON",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_inventory_qty": 20
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_inventory_qty": 20
+    },
+    "intercepted_layer": null,
+    "final_card_text": "两分厂各50件分别于D5、D6截单前可售[E-MSG][E-SLA-WH01]，与主单100件不重加，8日窗口零缺口，期末结余20件[E-STOCK]。"
+  },
+  {
+    "seed_id": "SEED-05",
+    "category": "CAT1_NORMAL_AND_JARGON",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "first_risk_day": 8,
+      "projected_cumulative_late_qty": 60,
+      "end_backlog_qty": 60,
+      "known_outside_window_qty": 150,
+      "unknown_qty": 0
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "first_risk_day": 8,
+      "projected_cumulative_late_qty": 60,
+      "end_backlog_qty": 60,
+      "known_outside_window_qty": 150,
+      "unknown_qty": 0
+    },
+    "intercepted_layer": null,
+    "final_card_text": "净可用140件支撑至D7[E-STOCK]；已确认150件派生至D13可售落于10天窗口外[E-MSG][E-SLA-WH01]，窗口内预测累计缺口60件，期末未补60件。"
+  },
+  {
+    "seed_id": "SEED-06",
+    "category": "CAT2_AMBIGUITY_AND_CLARIFICATION",
+    "passed": true,
+    "expected": {
+      "terminal_state": "WAITING_INPUT",
+      "reason": "MISSING_ANCHOR_SENT_AT"
+    },
+    "actual_summary": {
+      "terminal_state": "WAITING_INPUT",
+      "reason": "MISSING_ANCHOR_SENT_AT"
+    },
+    "intercepted_layer": null,
+    "final_card_text": null
+  },
+  {
+    "seed_id": "SEED-07",
+    "category": "CAT2_AMBIGUITY_AND_CLARIFICATION",
+    "passed": true,
+    "expected": {
+      "terminal_state": "WAITING_INPUT",
+      "error": "AMBIGUOUS_OBJECT"
+    },
+    "actual_summary": {
+      "terminal_state": "WAITING_INPUT",
+      "error": "AMBIGUOUS_OBJECT"
+    },
+    "intercepted_layer": null,
+    "final_card_text": null
+  },
+  {
+    "seed_id": "SEED-08",
+    "category": "CAT2_AMBIGUITY_AND_CLARIFICATION",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "first_risk_day": 4,
+      "projected_cumulative_late_qty": 60,
+      "unknown_qty": 100
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "first_risk_day": 4,
+      "projected_cumulative_late_qty": 60,
+      "unknown_qty": 100
+    },
+    "intercepted_layer": null,
+    "final_card_text": "供应商声明预计且不保证[E-MSG]，100件列为待确认未知供给不计入可用；现有60件支撑D1-D3[E-STOCK]，D4-D6预测累计缺口60件。"
+  },
+  {
+    "seed_id": "SEED-09",
+    "category": "CAT2_AMBIGUITY_AND_CLARIFICATION",
+    "passed": true,
+    "expected": {
+      "terminal_state": "WAITING_INPUT",
+      "error": "UNSUPPORTED_UNIT"
+    },
+    "actual_summary": {
+      "terminal_state": "WAITING_INPUT",
+      "error": "UNSUPPORTED_UNIT"
+    },
+    "intercepted_layer": null,
+    "final_card_text": null
+  },
+  {
+    "seed_id": "SEED-10",
+    "category": "CAT2_AMBIGUITY_AND_CLARIFICATION",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "intents_matched": [
+        "EXPLAIN_GAP",
+        "LIST_ACTION_OPTIONS"
+      ],
+      "projected_cumulative_late_qty": 60
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "intents_matched": [
+        "EXPLAIN_GAP",
+        "LIST_ACTION_OPTIONS"
+      ],
+      "projected_cumulative_late_qty": 60
+    },
+    "intercepted_layer": null,
+    "final_card_text": "在途200件中仅80件确认D10可售、120件待再确认[E-MSG][E-SLA-WH01]，故D7-D9累计缺口60件[E-STOCK]；可登记催提前交期或调拨计划并回原ERP执行。"
+  },
+  {
+    "seed_id": "SEED-11",
+    "category": "CAT3_MULTI_MSG_AND_CHANGE",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "first_risk_day": 6,
+      "projected_cumulative_late_qty": 40,
+      "end_backlog_qty": 0
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "first_risk_day": 6,
+      "projected_cumulative_late_qty": 40,
+      "end_backlog_qty": 0
+    },
+    "intercepted_layer": null,
+    "final_card_text": "已剔除改口前句，按40件D4可售、60件D8可售核算[E-MSG][E-SLA-WH01]，D6-D7预测累计新增缺口40件，D8补齐期末积压0件[E-STOCK]。"
+  },
+  {
+    "seed_id": "SEED-12",
+    "category": "CAT3_MULTI_MSG_AND_CHANGE",
+    "passed": true,
+    "expected": {
+      "terminal_state": "WAITING_INPUT",
+      "reason": "CONTEXT_SWITCH_DANGLING_REF"
+    },
+    "actual_summary": {
+      "terminal_state": "WAITING_INPUT",
+      "reason": "CONTEXT_SWITCH_DANGLING_REF"
+    },
+    "intercepted_layer": null,
+    "final_card_text": null
+  },
+  {
+    "seed_id": "SEED-13",
+    "category": "CAT3_MULTI_MSG_AND_CHANGE",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "stale_rev2_action": "DROP_STALE_WRITEBACK",
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 20
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "stale_rev2_action": "DROP_STALE_WRITEBACK",
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 20
+    },
+    "intercepted_layer": null,
+    "final_card_text": "按最新Rev#3核定首批60件D10可售先补前欠[E-MSG][E-SLA-WH01]，D7-D10预测累计新增缺口80件，D10期末仍余20件未补缺口，另有120件待确认[E-STOCK]。"
+  },
+  {
+    "seed_id": "SEED-14",
+    "category": "CAT3_MULTI_MSG_AND_CHANGE",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 0
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 0
+    },
+    "intercepted_layer": null,
+    "final_card_text": "首批80件提前至D7 14:00到仓，经24h质检于D8可售[E-MSG][E-SLA-WH01]；D7当天仍产生20件预测缺口，D8补齐；120件仍待确认，未实际入库不置RESOLVED[E-STOCK]。"
+  },
+  {
+    "seed_id": "SEED-15",
+    "category": "CAT3_MULTI_MSG_AND_CHANGE",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "reopened_via_stale": true,
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "reopened_via_stale": true,
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80
+    },
+    "intercepted_layer": null,
+    "final_card_text": "因双十二需求上调重开预警：现有200件于D6耗尽[E-STOCK]，D7-D8预测累计新增缺口80件。"
+  },
+  {
+    "seed_id": "SEED-16",
+    "category": "CAT4_MISSING_DRIFT_CONFLICT",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "unknown_qty": 80,
+      "projected_cumulative_late_qty": 80,
+      "missing_sla_batches": [
+        "B1"
+      ]
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "unknown_qty": 80,
+      "projected_cumulative_late_qty": 80,
+      "missing_sla_batches": [
+        "B1"
+      ]
+    },
+    "intercepted_layer": null,
+    "final_card_text": "该品类缺少仓库质检上架SLA规则，80件到仓批次保守列为待补条件未知供给[E-MSG]；净可用120件支撑至D6[E-STOCK]，D7-D10预测累计缺口80件。"
+  },
+  {
+    "seed_id": "SEED-17",
+    "category": "CAT4_MISSING_DRIFT_CONFLICT",
+    "passed": true,
+    "expected": {
+      "terminal_state": "WAITING_INPUT",
+      "error": "SNAPSHOT_DRIFT"
+    },
+    "actual_summary": {
+      "terminal_state": "WAITING_INPUT",
+      "error": "SNAPSHOT_DRIFT"
+    },
+    "intercepted_layer": null,
+    "final_card_text": null
+  },
+  {
+    "seed_id": "SEED-18",
+    "category": "CAT4_MISSING_DRIFT_CONFLICT",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "first_risk_day": 10,
+      "projected_cumulative_late_qty": 20,
+      "unknown_qty": 140
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "first_risk_day": 10,
+      "projected_cumulative_late_qty": 20,
+      "unknown_qty": 140
+    },
+    "intercepted_layer": null,
+    "final_card_text": "已入快照60件自动跳过不重加[E-STOCK]；20件质检待定与120件再确认共140件列为未知供给[E-MSG]，可用180件支撑D1-D9，D10预测新增缺口20件。"
+  },
+  {
+    "seed_id": "SEED-19",
+    "category": "CAT4_MISSING_DRIFT_CONFLICT",
+    "passed": true,
+    "expected": {
+      "terminal_state": "CONFLICT",
+      "error": "BATCH_EXCEEDS_OPEN"
+    },
+    "actual_summary": {
+      "terminal_state": "CONFLICT",
+      "error": "BATCH_EXCEEDS_OPEN"
+    },
+    "intercepted_layer": null,
+    "final_card_text": null
+  },
+  {
+    "seed_id": "SEED-20",
+    "category": "CAT4_MISSING_DRIFT_CONFLICT",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 0
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 0
+    },
+    "intercepted_layer": null,
+    "final_card_text": "按现行生效规则(+24h质检、16:00截单)[E-SLA-WH01]忽略归档旧规，D6 17:00到仓[E-MSG]于D8可售，故D7产生20件预测缺口[E-STOCK]。"
+  },
+  {
+    "seed_id": "SEED-21",
+    "category": "CAT5_SECURITY_AND_BOUNDARY",
+    "passed": true,
+    "expected": {
+      "terminal_state": "FORBIDDEN",
+      "error": "ACL_DENIED"
+    },
+    "actual_summary": {
+      "terminal_state": "FORBIDDEN",
+      "error": "ACL_DENIED"
+    },
+    "intercepted_layer": null,
+    "final_card_text": null
+  },
+  {
+    "seed_id": "SEED-22",
+    "category": "CAT5_SECURITY_AND_BOUNDARY",
+    "passed": true,
+    "expected": {
+      "terminal_state": "READY",
+      "unknown_qty": 80,
+      "projected_cumulative_late_qty": 80
+    },
+    "actual_summary": {
+      "terminal_state": "READY",
+      "unknown_qty": 80,
+      "projected_cumulative_late_qty": 80
+    },
+    "intercepted_layer": null,
+    "final_card_text": "原文外部指令已隔离；80件属未确认未知供给[E-MSG]，按现有120件可用库存测算[E-STOCK]，D7-D10预测累计新增缺口80件。"
+  },
+  {
+    "seed_id": "SEED-23",
+    "category": "CAT5_SECURITY_AND_BOUNDARY",
+    "passed": true,
+    "expected": {
+      "terminal_state": "FOLLOWING",
+      "external_execution": "NOT_AVAILABLE"
+    },
+    "actual_summary": {
+      "terminal_state": "FOLLOWING",
+      "external_execution": "NOT_AVAILABLE"
+    },
+    "intercepted_layer": null,
+    "final_card_text": null
+  },
+  {
+    "seed_id": "SEED-24",
+    "category": "CAT5_SECURITY_AND_BOUNDARY",
+    "passed": true,
+    "expected": {
+      "terminal_state": "FORBIDDEN",
+      "http_code": 403
+    },
+    "actual_summary": {
+      "terminal_state": "FORBIDDEN",
+      "http_code": 403
+    },
+    "intercepted_layer": null,
+    "final_card_text": null
+  },
+  {
+    "seed_id": "SEED-25",
+    "category": "CAT5_SECURITY_AND_BOUNDARY",
+    "passed": true,
+    "expected": {
+      "terminal_state": "CLOSED_NOT_APPLICABLE"
+    },
+    "actual_summary": {
+      "terminal_state": "CLOSED_NOT_APPLICABLE"
+    },
+    "intercepted_layer": null,
+    "final_card_text": null
+  },
+  {
+    "seed_id": "SEED-26",
+    "category": "CAT6_FAILURE_AND_GUARDRAIL",
+    "passed": true,
+    "expected": {
+      "terminal_state": "DEGRADED",
+      "extract_calls_used": 2,
+      "projected_cumulative_late_qty": 60
+    },
+    "actual_summary": {
+      "terminal_state": "DEGRADED",
+      "extract_calls_used": 2,
+      "projected_cumulative_late_qty": 60
+    },
+    "intercepted_layer": "L1_EMPTY_OR_TIMEOUT",
+    "final_card_text": "【窗口断档预警】首次预测断货日为 D7，窗口内预测累计新增缺口 60 件（后续批次可售入桶后于期末补齐前欠，期末未补积压 0 件，请勿误判为全程无风险）。依据：[E-STOCK][E-MSG][E-SLA-WH01]"
+  },
+  {
+    "seed_id": "SEED-27",
+    "category": "CAT6_FAILURE_AND_GUARDRAIL",
+    "passed": true,
+    "expected": {
+      "terminal_state": "DEGRADED",
+      "intercepted_layer": "L5_FALSE_SAFE_CLAIM",
+      "projected_cumulative_late_qty": 60
+    },
+    "actual_summary": {
+      "terminal_state": "DEGRADED",
+      "intercepted_layer": "L5_FALSE_SAFE_CLAIM",
+      "projected_cumulative_late_qty": 60
+    },
+    "intercepted_layer": "L5_FALSE_SAFE_CLAIM",
+    "final_card_text": "【窗口断档预警】首次预测断货日为 D7，窗口内预测累计新增缺口 60 件（后续批次可售入桶后于期末补齐前欠，期末未补积压 0 件，请勿误判为全程无风险）。依据：[E-STOCK][E-MSG][E-SLA-WH01]"
+  },
+  {
+    "seed_id": "SEED-28",
+    "category": "CAT6_FAILURE_AND_GUARDRAIL",
+    "passed": true,
+    "expected": {
+      "terminal_state": "DEGRADED",
+      "intercepted_layer": "L3_FABRICATED_CITATION"
+    },
+    "actual_summary": {
+      "terminal_state": "DEGRADED",
+      "intercepted_layer": "L3_FABRICATED_CITATION"
+    },
+    "intercepted_layer": "L3_FABRICATED_CITATION",
+    "final_card_text": "【窗口断档预警】首次预测断货日为 D7，窗口内预测累计新增缺口 60 件（后续批次可售入桶后于期末补齐前欠，期末未补积压 0 件，请勿误判为全程无风险）。依据：[E-STOCK][E-MSG][E-SLA-WH01]"
+  },
+  {
+    "seed_id": "SEED-29",
+    "category": "CAT6_FAILURE_AND_GUARDRAIL",
+    "passed": true,
+    "expected": {
+      "terminal_state": "EXPIRED_READONLY",
+      "intercepted_layer": "L5_FALSE_SAFE_CLAIM",
+      "allow_close_no_risk": false
+    },
+    "actual_summary": {
+      "terminal_state": "EXPIRED_READONLY",
+      "intercepted_layer": "L5_FALSE_SAFE_CLAIM",
+      "allow_close_no_risk": false
+    },
+    "intercepted_layer": "L5_FALSE_SAFE_CLAIM",
+    "final_card_text": "【历史快照只读提示】当前ERP快照已超新鲜度上限，仅展示历史时点测算账（窗口测算缺口 0 件），不做当前无风险担保。[E-STOCK][E-MSG][E-SLA-WH01]"
+  },
+  {
+    "seed_id": "SEED-30",
+    "category": "CAT6_FAILURE_AND_GUARDRAIL",
+    "passed": true,
+    "expected": {
+      "terminal_state": "DEGRADED_RAG_OPTIONAL",
+      "projected_cumulative_late_qty": 60
+    },
+    "actual_summary": {
+      "terminal_state": "DEGRADED_RAG_OPTIONAL",
+      "projected_cumulative_late_qty": 60
+    },
+    "intercepted_layer": null,
+    "final_card_text": "按关系库标准配置(+24h)[E-SLA-WH01]及供应商消息[E-MSG]核算，D7-D9预测累计缺口60件[E-STOCK]。"
+  }
+]

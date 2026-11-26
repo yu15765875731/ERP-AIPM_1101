@@ -1,0 +1,37 @@
+[
+  {
+    "dev_id": "OPS-DEV-01",
+    "purpose": "Single-shop net sales comparison routing",
+    "user_query": "帮我看下C店上月和这月的净销售额对比",
+    "target_plan": {
+      "intent": "COMPARE",
+      "tool": "READ_METRICS",
+      "metric": "NET_SALES"
+    }
+  },
+  {
+    "dev_id": "OPS-DEV-02",
+    "purpose": "Incomplete period clarification",
+    "user_query": "今天才周二，帮我对比这周和上周全周的毛利",
+    "target_plan": {
+      "intent": "COMPARE",
+      "alignment_mode": "SAME_PROGRESS_TO_DATE",
+      "needs_clarification": true
+    }
+  },
+  {
+    "dev_id": "OPS-DEV-03",
+    "purpose": "Definition lookup without RAG overhead",
+    "user_query": "咱们的平台扣点包不包含达人佣金？",
+    "target_plan": {
+      "intent": "LOOKUP_DEFINITION",
+      "tool": "LOOKUP_DEFINITION"
+    }
+  },
+  {
+    "dev_id": "OPS-DEV-04",
+    "purpose": "Separate FACT from ASSUMPTION on logistics fee rise",
+    "user_query": "快递费涨了是不是仓库乱用顺丰？",
+    "target_note": "Report fulfillment fee rate delta as FACT; mark courier misuse as ASSUMPTION to verify."
+  }
+]

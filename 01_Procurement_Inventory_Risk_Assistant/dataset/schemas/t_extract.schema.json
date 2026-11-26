@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProcurementCommitmentExtractionContract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_id", "anchor_sent_at", "timezone", "review_status", "batches", "missing_fields"],
+  "properties": {
+    "source_id": { "type": "string", "minLength": 1 },
+    "anchor_sent_at": { "type": ["string", "null"] },
+    "timezone": { "type": "string", "default": "Asia/Shanghai" },
+    "review_status": { "const": "CANDIDATE" },
+    "batches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "batch_temp_id", "quantity", "unit", "time_type", "raw_time_text",
+          "normalized_time", "supplier_statement", "uncertainty_flags",
+          "source_span", "supersedes_previous_in_msg"
+        ],
+        "properties": {
+          "batch_temp_id": { "type": "string" },
+          "quantity": { "type": ["integer", "null"], "minimum": 0 },
+          "unit": { "enum": ["PIECE", "BOX_UNCONVERTED", "UNKNOWN"] },
+          "time_type": { "enum": ["ARRIVAL", "SELLABLE", "DISPATCH", "RECONFIRM", "UNKNOWN"] },
+          "raw_time_text": { "type": ["string", "null"] },
+          "normalized_time": { "type": ["string", "null"] },
+          "supplier_statement": { "enum": ["EXPLICIT_CONFIRMATION", "ESTIMATED", "RECONFIRM_LATER", "NEGATED", "UNKNOWN"] },
+          "uncertainty_flags": {
+            "type": "array",
+            "items": { "enum": ["NEGATED_GUARANTEE", "CONDITIONAL_ON_RAW_MAT_OR_QC", "RATIO_CONVERTED", "SELF_CORRECTED"] },
+            "uniqueItems": true
+          },
+          "source_span": {
+            "type": "object",
+            "required": ["msg_seq", "start_char", "end_char", "quote"],
+            "properties": {
+              "msg_seq": { "type": "integer", "minimum": 1 },
+              "start_char": { "type": "integer", "minimum": 0 },
+              "end_char": { "type": "integer", "minimum": 0 },
+              "quote": { "type": "string", "minLength": 1 }
+            }
+          },
+          "supersedes_previous_in_msg": { "type": "boolean" }
+        }
+      }
+    },
+    "missing_fields": {
+      "type": "array",
+      "items": { "enum": ["ANCHOR_TIMESTAMP", "QUANTITY", "UNIT_CONVERSION", "TARGET_DATE", "WAREHOUSE", "SKU"] },
+      "uniqueItems": true
+    }
+  }
+}

@@ -1,0 +1,2531 @@
+[
+  {
+    "case_id": "C01",
+    "title": "基准案例：D9 14:00到仓(+24h质检→D10可售80) + D11再确认120",
+    "kind": "rule",
+    "refs": [
+      "I03",
+      "I06",
+      "R-SLA"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 80,
+          "day": 9,
+          "reviewed": true,
+          "time_type": "ARRIVAL",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false,
+          "event_time_hhmm": "14:00"
+        },
+        {
+          "batch_id": "B2",
+          "quantity": 120,
+          "day": 11,
+          "reviewed": true,
+          "time_type": "RECONFIRM",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "RECONFIRM_LATER",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 60,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 120,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW",
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        },
+        {
+          "day": 9,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 60,
+          "end_inventory": 0
+        },
+        {
+          "day": 10,
+          "starting_inventory": 0,
+          "supply": 80,
+          "demand": 20,
+          "old_filled": 60,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C02",
+    "title": "无后续供给",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    }
+  },
+  {
+    "case_id": "C03",
+    "title": "起点库存足够(200)",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 200,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    }
+  },
+  {
+    "case_id": "C04",
+    "title": "D7截单前可售80",
+    "kind": "rule",
+    "refs": [
+      "R-TIME"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 80,
+          "day": 7,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false,
+          "event_time_hhmm": "15:30"
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    }
+  },
+  {
+    "case_id": "C05",
+    "title": "D7截单后(17:30)可售顺延入D8桶",
+    "kind": "rule",
+    "refs": [
+      "I06",
+      "R-TIME"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 80,
+          "day": 7,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false,
+          "event_time_hhmm": "17:30"
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW"
+    }
+  },
+  {
+    "case_id": "C06",
+    "title": "未核对CANDIDATE不计确定供给",
+    "kind": "rule",
+    "refs": [
+      "R-UNKNOWN"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 80,
+          "day": 7,
+          "reviewed": false,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "UNCONFIRMED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_qty": 80,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    }
+  },
+  {
+    "case_id": "C07",
+    "title": "缺失日期归入未知",
+    "kind": "rule",
+    "refs": [
+      "R-UNKNOWN"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 80,
+          "day": null,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_qty": 80,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    }
+  },
+  {
+    "case_id": "C08",
+    "title": "D10仅补40未清积压",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 40,
+          "day": 10,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 40,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    }
+  },
+  {
+    "case_id": "C09",
+    "title": "D10补100期末结余20",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 100,
+          "day": 10,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 60,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 20,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW"
+    }
+  },
+  {
+    "case_id": "C10",
+    "title": "零需求纯供给累积",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 0,
+      "demand": [
+        0,
+        0
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 10,
+          "day": 1,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 2
+    },
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 10,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    }
+  },
+  {
+    "case_id": "C11",
+    "title": "零库存次日补齐",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 0,
+      "demand": [
+        10,
+        10
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 20,
+          "day": 2,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 2
+    },
+    "expected": {
+      "first_risk_day": 1,
+      "projected_cumulative_late_qty": 10,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW"
+    }
+  },
+  {
+    "case_id": "C12",
+    "title": "双独立批次逐日衔接",
+    "kind": "rule",
+    "refs": [
+      "R-BATCH"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 0,
+      "demand": [
+        10,
+        10
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 10,
+          "day": 1,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        },
+        {
+          "batch_id": "B2",
+          "quantity": 10,
+          "day": 2,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 2
+    },
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    }
+  },
+  {
+    "case_id": "C13",
+    "title": "窗口外已确认供给单列(known_outside_window_qty)",
+    "kind": "rule",
+    "refs": [
+      "I06"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 20,
+      "demand": [
+        10,
+        10,
+        10
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 10,
+          "day": 4,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 3
+    },
+    "expected": {
+      "first_risk_day": 3,
+      "projected_cumulative_late_qty": 10,
+      "end_backlog_qty": 10,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 10,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    }
+  },
+  {
+    "case_id": "C14",
+    "title": "非均匀波峰需求",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 20,
+      "demand": [
+        0,
+        20,
+        10
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 3
+    },
+    "expected": {
+      "first_risk_day": 3,
+      "projected_cumulative_late_qty": 10,
+      "end_backlog_qty": 10,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    }
+  },
+  {
+    "case_id": "C15",
+    "title": "二次断货波峰测试",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 0,
+      "demand": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 30,
+          "day": 2,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 4
+    },
+    "expected": {
+      "first_risk_day": 1,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 10,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    }
+  },
+  {
+    "case_id": "C16",
+    "title": "单日零需求保底",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 10,
+      "demand": [
+        0
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 1
+    },
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 10,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    }
+  },
+  {
+    "case_id": "C17",
+    "title": "零数量空批次兼容",
+    "kind": "rule",
+    "refs": [
+      "2.2"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 0,
+      "demand": [
+        0
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 0,
+          "day": 1,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 1
+    },
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    }
+  },
+  {
+    "case_id": "C18",
+    "title": "预计+不保证(NOT_GUARANTEED)严禁入桶",
+    "kind": "rule",
+    "refs": [
+      "I11"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 80,
+          "day": 10,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        },
+        {
+          "batch_id": "B2",
+          "quantity": 120,
+          "day": 7,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [
+            "NOT_GUARANTEED"
+          ],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 60,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 120,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW"
+    }
+  },
+  {
+    "case_id": "C19",
+    "title": "已含入快照供给跳过防重计",
+    "kind": "rule",
+    "refs": [
+      "I01"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 200,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 80,
+          "day": 1,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 80,
+          "status": "IN_SNAPSHOT_SELLABLE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    }
+  },
+  {
+    "case_id": "C20",
+    "title": "恰等于16:00截单点含等号入当日桶",
+    "kind": "rule",
+    "refs": [
+      "I06"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 80,
+          "day": 7,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false,
+          "event_time_hhmm": "16:00"
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    }
+  },
+  {
+    "case_id": "C21",
+    "title": "新品类缺失仓库质检SLA保守归未知(ARRIVAL_ONLY_NO_SLA)",
+    "kind": "rule",
+    "refs": [
+      "I06",
+      "V1"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 80,
+          "day": 6,
+          "reviewed": true,
+          "time_type": "ARRIVAL",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false,
+          "event_time_hhmm": "10:00"
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": null,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_qty": 80,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END",
+      "missing_sla_batches": [
+        "B1"
+      ]
+    }
+  },
+  {
+    "case_id": "C22",
+    "title": "部分收货对账：订购200=60入快照(可用180)+20待检+120再确认",
+    "kind": "rule",
+    "refs": [
+      "I01",
+      "I02"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 180,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1_PART",
+          "quantity": 80,
+          "day": 1,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 60,
+          "status": "RECEIVED_PENDING_QC",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        },
+        {
+          "batch_id": "B2",
+          "quantity": 120,
+          "day": 11,
+          "reviewed": true,
+          "time_type": "RECONFIRM",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "RECONFIRM_LATER",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10,
+      "open_qty": 120
+    },
+    "expected": {
+      "first_risk_day": 10,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 20,
+      "end_inventory_qty": 0,
+      "unknown_qty": 140,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    }
+  },
+  {
+    "case_id": "C23",
+    "title": "微信自我纠正前句作废(supersedes_discarded)不翻倍累加",
+    "kind": "rule",
+    "refs": [
+      "BC-06"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 60,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B_OLD",
+          "quantity": 100,
+          "day": 3,
+          "reviewed": true,
+          "time_type": "ARRIVAL",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": true
+        },
+        {
+          "batch_id": "B_NEW1",
+          "quantity": 40,
+          "day": 3,
+          "reviewed": true,
+          "time_type": "ARRIVAL",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false,
+          "event_time_hhmm": "14:00"
+        },
+        {
+          "batch_id": "B_NEW2",
+          "quantity": 60,
+          "day": 7,
+          "reviewed": true,
+          "time_type": "ARRIVAL",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false,
+          "event_time_hhmm": "14:00"
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 8,
+      "open_qty": 100
+    },
+    "expected": {
+      "first_risk_day": 6,
+      "projected_cumulative_late_qty": 40,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW"
+    }
+  },
+  {
+    "case_id": "C24",
+    "title": "快照超4h过期进入EXPIRED_READONLY禁用无风险担保",
+    "kind": "rule",
+    "refs": [
+      "I05"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 300,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 300,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 100,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "EXPIRED_SNAPSHOT_NO_GUARANTEE",
+      "allow_close_no_risk": false
+    }
+  },
+  {
+    "case_id": "C25",
+    "title": "周五超截止遇周末停工(D2/D3停工)顺延至下周一D4作业日桶",
+    "kind": "rule",
+    "refs": [
+      "I06",
+      "warehouse_calendar_ver"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 20,
+      "demand": [
+        20,
+        0,
+        0,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 20,
+          "day": 1,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false,
+          "event_time_hhmm": "17:30"
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 4,
+      "non_working_days": [
+        2,
+        3
+      ]
+    },
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    }
+  },
+  {
+    "case_id": "N01",
+    "title": "负库存拦截",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": -1,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "error": "INVALID_QUANTITY"
+    }
+  },
+  {
+    "case_id": "N02",
+    "title": "负需求拦截",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        -5
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 1
+    },
+    "expected": {
+      "error": "INVALID_QUANTITY"
+    }
+  },
+  {
+    "case_id": "N03",
+    "title": "布尔值伪装整数拦截",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": true,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "error": "INVALID_QUANTITY"
+    }
+  },
+  {
+    "case_id": "N04",
+    "title": "负批次量拦截",
+    "kind": "rule",
+    "refs": [
+      "2.2"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": -10,
+          "day": 1,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "error": "INVALID_QUANTITY"
+    }
+  },
+  {
+    "case_id": "N05",
+    "title": "重复批次ID拦截",
+    "kind": "rule",
+    "refs": [
+      "R-BATCH"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 10,
+          "day": 1,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        },
+        {
+          "batch_id": "B1",
+          "quantity": 10,
+          "day": 2,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "error": "DUPLICATE_BATCH"
+    }
+  },
+  {
+    "case_id": "N06",
+    "title": "第0日非法日期拦截",
+    "kind": "rule",
+    "refs": [
+      "2.3"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 10,
+          "day": 0,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "error": "INVALID_DAY"
+    }
+  },
+  {
+    "case_id": "N07",
+    "title": "窗口超30天拦截",
+    "kind": "rule",
+    "refs": [
+      "1.2"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 31
+    },
+    "expected": {
+      "error": "INVALID_WINDOW"
+    }
+  },
+  {
+    "case_id": "N08",
+    "title": "未换算箱单位拦截",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [],
+      "unit": "BOX_UNCONVERTED",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "error": "UNSUPPORTED_UNIT"
+    }
+  },
+  {
+    "case_id": "N09",
+    "title": "库存占用口径未知阻断",
+    "kind": "rule",
+    "refs": [
+      "R-NET"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "UNKNOWN",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "error": "MISSING_BASIS"
+    }
+  },
+  {
+    "case_id": "N10",
+    "title": "ERP分页残缺快照阻断",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": false,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "error": "INCOMPLETE_SNAPSHOT"
+    }
+  },
+  {
+    "case_id": "N11",
+    "title": "活动子批次超open_qty进CONFLICT",
+    "kind": "rule",
+    "refs": [
+      "I02"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [
+        {
+          "batch_id": "B1",
+          "quantity": 60,
+          "day": 1,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        },
+        {
+          "batch_id": "B2",
+          "quantity": 80,
+          "day": 2,
+          "reviewed": true,
+          "time_type": "SELLABLE",
+          "before_or_at_cutoff": true,
+          "included_in_snapshot_qty": 0,
+          "status": "FUTURE_ACTIVE",
+          "supplier_modality": "COMMITTED",
+          "hedging_flags": [],
+          "supersedes_discarded": false
+        }
+      ],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10,
+      "open_qty": 120
+    },
+    "expected": {
+      "error": "BATCH_EXCEEDS_OPEN"
+    }
+  },
+  {
+    "case_id": "N12",
+    "title": "件数浮点数拦截",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120.5,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "error": "INVALID_QUANTITY"
+    }
+  },
+  {
+    "case_id": "N13",
+    "title": "跨表采集时间漂移>60s阻断(SNAPSHOT_DRIFT)",
+    "kind": "rule",
+    "refs": [
+      "I05"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 510,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10
+    },
+    "expected": {
+      "error": "SNAPSHOT_DRIFT"
+    }
+  },
+  {
+    "case_id": "N14",
+    "title": "无权限请求底价字段403阻断",
+    "kind": "rule",
+    "refs": [
+      "L4"
+    ],
+    "input": {
+      "actor_tenant": "TENANT_FLAGSHIP_A",
+      "resource_tenant": "TENANT_FLAGSHIP_A",
+      "authorized": true,
+      "sku_id": "A001-BLK-L",
+      "warehouse_id": "WH-EAST-01",
+      "initial": 120,
+      "demand": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "batches": [],
+      "unit": "PIECE",
+      "inventory_basis": "NET",
+      "demand_basis": "NET_NEW",
+      "data_complete": true,
+      "max_table_drift_seconds": 12,
+      "snapshot_age_minutes": 5,
+      "daily_cutoff_hhmm": "16:00",
+      "warehouse_sla_hours": 24,
+      "window_days": 10,
+      "requested_price_field": true,
+      "price_field_allowed": false
+    },
+    "expected": {
+      "error": "FIELD_ACL_DENIED"
+    }
+  },
+  {
+    "case_id": "S01",
+    "title": "旧Rev异步写回被CAS拦截标STALE",
+    "kind": "policy",
+    "refs": [
+      "R-REV"
+    ],
+    "input": {
+      "op": "cas_writeback",
+      "expected_revision": 1,
+      "current_revision": 2
+    },
+    "expected": {
+      "code": 409,
+      "state": "STALE"
+    }
+  },
+  {
+    "case_id": "S02",
+    "title": "匹配Rev写回成功",
+    "kind": "policy",
+    "refs": [
+      "R-REV"
+    ],
+    "input": {
+      "op": "cas_writeback",
+      "expected_revision": 2,
+      "current_revision": 2
+    },
+    "expected": {
+      "code": 200,
+      "state": "READY"
+    }
+  },
+  {
+    "case_id": "S03",
+    "title": "跨租户读取原文403阻断",
+    "kind": "policy",
+    "refs": [
+      "M09"
+    ],
+    "input": {
+      "op": "acl_read",
+      "actor_tenant": "A",
+      "source_tenant": "B"
+    },
+    "expected": {
+      "code": 403,
+      "visible": false
+    }
+  },
+  {
+    "case_id": "S04",
+    "title": "动态撤权后权限指纹失配403拦截缓存",
+    "kind": "policy",
+    "refs": [
+      "I23"
+    ],
+    "input": {
+      "op": "acl_read",
+      "actor_tenant": "A",
+      "source_tenant": "A",
+      "perm_fingerprint_current": "v2",
+      "perm_fingerprint_cached": "v1"
+    },
+    "expected": {
+      "code": 403,
+      "visible": false
+    }
+  },
+  {
+    "case_id": "S05",
+    "title": "同幂等键同请求体安全复用",
+    "kind": "policy",
+    "refs": [
+      "I12"
+    ],
+    "input": {
+      "op": "scoped_idempotency",
+      "same_idempotency_header": true,
+      "stored_tenant": "A",
+      "stored_watermark": "T1",
+      "stored_hash": "H1",
+      "req_tenant": "A",
+      "req_watermark": "T1",
+      "req_hash": "H1"
+    },
+    "expected": {
+      "code": 200,
+      "reused": true
+    }
+  },
+  {
+    "case_id": "S06",
+    "title": "同幂等键异请求体409拒绝",
+    "kind": "policy",
+    "refs": [
+      "I12"
+    ],
+    "input": {
+      "op": "scoped_idempotency",
+      "same_idempotency_header": true,
+      "stored_tenant": "A",
+      "stored_watermark": "T1",
+      "stored_hash": "H1",
+      "req_tenant": "A",
+      "req_watermark": "T1",
+      "req_hash": "H2"
+    },
+    "expected": {
+      "code": 409,
+      "reused": false
+    }
+  },
+  {
+    "case_id": "S07",
+    "title": "不同租户上传相同SHA文件不被误去重吞没",
+    "kind": "policy",
+    "refs": [
+      "I12"
+    ],
+    "input": {
+      "op": "scoped_idempotency",
+      "same_idempotency_header": false,
+      "stored_tenant": "A",
+      "stored_watermark": "T1",
+      "stored_hash": "H_SAME",
+      "req_tenant": "B",
+      "req_watermark": "T1",
+      "req_hash": "H_SAME"
+    },
+    "expected": {
+      "code": 200,
+      "accepted_as_new_snapshot": true
+    }
+  },
+  {
+    "case_id": "S08",
+    "title": "仅保存内部计划流转FOLLOWING且禁外部写",
+    "kind": "policy",
+    "refs": [
+      "R-RECOVERY"
+    ],
+    "input": {
+      "op": "save_internal_plan"
+    },
+    "expected": {
+      "code": 200,
+      "state": "FOLLOWING",
+      "external_execution": "NOT_AVAILABLE"
+    }
+  },
+  {
+    "case_id": "S09",
+    "title": "零缺口零未知正常办结(CLOSED_NO_RISK)",
+    "kind": "policy",
+    "refs": [
+      "I04"
+    ],
+    "input": {
+      "op": "close_no_risk",
+      "projected_cumulative_late_qty": 0,
+      "unknown_qty": 0,
+      "freshness": "FRESH"
+    },
+    "expected": {
+      "code": 200,
+      "state": "CLOSED_NO_RISK"
+    }
+  },
+  {
+    "case_id": "S10",
+    "title": "实物可售回填且重算零缺口进入RESOLVED",
+    "kind": "policy",
+    "refs": [
+      "F04"
+    ],
+    "input": {
+      "op": "verify_recovery",
+      "actual_sellable_evidence": true,
+      "recalculated_gap": 0
+    },
+    "expected": {
+      "code": 200,
+      "state": "RESOLVED"
+    }
+  },
+  {
+    "case_id": "S11",
+    "title": "实物部分回填仍有缺口回READY继续跟进",
+    "kind": "policy",
+    "refs": [
+      "F04"
+    ],
+    "input": {
+      "op": "verify_recovery",
+      "actual_sellable_evidence": true,
+      "recalculated_gap": 20
+    },
+    "expected": {
+      "code": 200,
+      "state": "READY"
+    }
+  },
+  {
+    "case_id": "S12",
+    "title": "运营确认需求取消入CLOSED_NOT_APPLICABLE",
+    "kind": "policy",
+    "refs": [
+      "F04"
+    ],
+    "input": {
+      "op": "cancel_demand",
+      "ops_confirmed": true
+    },
+    "expected": {
+      "code": 200,
+      "state": "CLOSED_NOT_APPLICABLE"
+    }
+  },
+  {
+    "case_id": "S13",
+    "title": "RESOLVED后发生退货/加单重开入STALE->VALIDATING",
+    "kind": "policy",
+    "refs": [
+      "I04"
+    ],
+    "input": {
+      "op": "external_change_event",
+      "current_state": "RESOLVED"
+    },
+    "expected": {
+      "code": 200,
+      "freshness": "STALE",
+      "next_state": "VALIDATING"
+    }
+  },
+  {
+    "case_id": "S14",
+    "title": "单节点连续2次JSON错误立即降级不超预算",
+    "kind": "policy",
+    "refs": [
+      "I07"
+    ],
+    "input": {
+      "op": "llm_node_budget",
+      "attempt_outcomes": [
+        "BAD_JSON",
+        "BAD_JSON",
+        "VALID_JSON"
+      ]
+    },
+    "expected": {
+      "calls_used": 2,
+      "final_mode": "DETERMINISTIC_FALLBACK"
+    }
+  }
+]

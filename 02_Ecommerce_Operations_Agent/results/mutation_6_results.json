@@ -1,0 +1,26 @@
+[
+  {
+    "mutation": "silent_clip_scope",
+    "killed": true
+  },
+  {
+    "mutation": "allow_diff_cost_leak",
+    "killed": true
+  },
+  {
+    "mutation": "ignore_watermark_drift",
+    "killed": true
+  },
+  {
+    "mutation": "naive_ad_allocation",
+    "killed": true
+  },
+  {
+    "mutation": "fill_null_cost_with_zero",
+    "killed": true
+  },
+  {
+    "mutation": "mix_counterfactual_into_delta",
+    "killed": true
+  }
+]

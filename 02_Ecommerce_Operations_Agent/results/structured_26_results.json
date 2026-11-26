@@ -1,0 +1,184 @@
+[
+  {
+    "case_id": "C01",
+    "title": "P0全店总CM1",
+    "passed": true,
+    "actual": "10000",
+    "expected": "10000"
+  },
+  {
+    "case_id": "C02",
+    "title": "P1全店总CM1",
+    "passed": true,
+    "actual": "4000",
+    "expected": "4000"
+  },
+  {
+    "case_id": "C03",
+    "title": "总CM1环比变化",
+    "passed": true,
+    "actual": "-6000",
+    "expected": "-6000"
+  },
+  {
+    "case_id": "C04",
+    "title": "主分项桥五项守恒",
+    "passed": true,
+    "actual": "[Decimal('20000'), Decimal('-12000'), Decimal('-1000'), Decimal('-12000'), Decimal('-1000')]",
+    "expected": "[Decimal('20000'), Decimal('-12000'), Decimal('-1000'), Decimal('-12000'), Decimal('-1000')]"
+  },
+  {
+    "case_id": "C05",
+    "title": "规模效应与费率偏移之和等于总变化(-6000.00)",
+    "passed": true,
+    "actual": "-6000.00",
+    "expected": "-6000.00"
+  },
+  {
+    "case_id": "C06",
+    "title": "旧利润率静态算术对照差额(-8000.00单列)",
+    "passed": true,
+    "actual": "-8000.00",
+    "expected": "-8000.00"
+  },
+  {
+    "case_id": "C07",
+    "title": "CM1贡献率变化百分点(-6.67 pct_pts)",
+    "passed": true,
+    "actual": "-6.67",
+    "expected": "-6.67"
+  },
+  {
+    "case_id": "C08",
+    "title": "店铺互斥加总守恒(A店-6000 + B店0 = -6000)",
+    "passed": true,
+    "actual": "-6000",
+    "expected": "-6000"
+  },
+  {
+    "case_id": "C09",
+    "title": "TIER_1缺广告费仍允许查净销售额(120000)",
+    "passed": true,
+    "actual": "120000",
+    "expected": "120000"
+  },
+  {
+    "case_id": "C10",
+    "title": "TIER_1缺广告费阻断完整CM1防补零",
+    "passed": true,
+    "actual": "MISSING_COST_OR_FEE",
+    "expected": "MISSING_COST_OR_FEE"
+  },
+  {
+    "case_id": "C11",
+    "title": "TIER_2广告费仅店铺级阻断SKU级CM1防粗暴均摊",
+    "passed": true,
+    "actual": "UNALLOCATED_SHOP_AD_FEE_FOR_SKU_CM1",
+    "expected": "UNALLOCATED_SHOP_AD_FEE_FOR_SKU_CM1"
+  },
+  {
+    "case_id": "C12",
+    "title": "零销售额时利润率返回None防除零",
+    "passed": true,
+    "actual": "None",
+    "expected": "None"
+  },
+  {
+    "case_id": "C13",
+    "title": "重复粒度行阻断防多对多放大",
+    "passed": true,
+    "actual": "DUPLICATE_GRAIN",
+    "expected": "DUPLICATE_GRAIN"
+  },
+  {
+    "case_id": "C14",
+    "title": "越权查B店直接阻断",
+    "passed": true,
+    "actual": "FORBIDDEN_SHOP_SCOPE",
+    "expected": "FORBIDDEN_SHOP_SCOPE"
+  },
+  {
+    "case_id": "C15",
+    "title": "仅A店权限问全公司禁静默裁剪冒充全盘",
+    "passed": true,
+    "actual": "FORBIDDEN_COMPANY_WIDE_CLAIM",
+    "expected": "FORBIDDEN_COMPANY_WIDE_CLAIM"
+  },
+  {
+    "case_id": "C16",
+    "title": "无COGS底价权限阻断CM1防差分反推成本",
+    "passed": true,
+    "actual": "FORBIDDEN_COST_METRIC",
+    "expected": "FORBIDDEN_COST_METRIC"
+  },
+  {
+    "case_id": "C17",
+    "title": "无COGS权限仍可正常查询授权净销售额(70000)",
+    "passed": true,
+    "actual": "70000",
+    "expected": "70000"
+  },
+  {
+    "case_id": "C18",
+    "title": "订单与广告账单跨表水位错位超限阻断",
+    "passed": true,
+    "actual": "WATERMARK_DRIFT",
+    "expected": "WATERMARK_DRIFT"
+  },
+  {
+    "case_id": "C19",
+    "title": "未完结半周对整周未对齐阻断直接混比",
+    "passed": true,
+    "actual": "INCOMPARABLE_PERIOD",
+    "expected": "INCOMPARABLE_PERIOD"
+  },
+  {
+    "case_id": "G01",
+    "title": "合规有据解释通过七层护栏",
+    "passed": true,
+    "actual": "READY",
+    "expected": "READY"
+  },
+  {
+    "case_id": "G02",
+    "title": "L7拦截迟到旧Revision防串店覆盖",
+    "passed": true,
+    "actual": "STALE",
+    "expected": "STALE"
+  },
+  {
+    "case_id": "G03",
+    "title": "L2拦截越权自动关停广告指令",
+    "passed": true,
+    "actual": "BLOCKED",
+    "expected": "BLOCKED"
+  },
+  {
+    "case_id": "G04",
+    "title": "L3拦截伪造引用ID回退标准模板",
+    "passed": true,
+    "actual": "L3_INVALID_CITATION",
+    "expected": "L3_INVALID_CITATION"
+  },
+  {
+    "case_id": "G05",
+    "title": "L5拦截把-8000反事实对照混充-6000主变化",
+    "passed": true,
+    "actual": "L5_NUMERIC_MISMATCH",
+    "expected": "L5_NUMERIC_MISMATCH"
+  },
+  {
+    "case_id": "G06",
+    "title": "L5拦截漏报费用覆盖与非因果限制说明",
+    "passed": true,
+    "actual": "L5_MISSING_REQUIRED_LIMITATION",
+    "expected": "L5_MISSING_REQUIRED_LIMITATION"
+  },
+  {
+    "case_id": "G07",
+    "title": "L6拦截因果夸大与静态差额当立赚承诺",
+    "passed": true,
+    "actual": "L6_CAUSAL_OR_SAVINGS_OVERCLAIM",
+    "expected": "L6_CAUSAL_OR_SAVINGS_OVERCLAIM"
+  }
+]

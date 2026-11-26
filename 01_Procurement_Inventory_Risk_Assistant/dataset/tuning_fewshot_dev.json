@@ -1,0 +1,104 @@
+[
+  {
+    "dev_id": "DEV-01",
+    "purpose": "Single committed arrival extraction",
+    "raw_messages": [
+      "张经理：T恤50件定于11月28日上午11点送达苏州仓"
+    ],
+    "anchor_sent_at": "2026-11-25T10:00:00+08:00",
+    "target_extraction": [
+      {
+        "qty": 50,
+        "time_type": "ARRIVAL",
+        "modality": "COMMITTED",
+        "hedging_flags": []
+      }
+    ]
+  },
+  {
+    "dev_id": "DEV-02",
+    "purpose": "Reconfirm modality preservation",
+    "raw_messages": [
+      "李厂长：辅料还没齐，那300件下周三我再答复你具体哪天发"
+    ],
+    "anchor_sent_at": "2026-11-25T10:00:00+08:00",
+    "target_extraction": [
+      {
+        "qty": 300,
+        "time_type": "RECONFIRM",
+        "modality": "RECONFIRM_LATER",
+        "hedging_flags": []
+      }
+    ]
+  },
+  {
+    "dev_id": "DEV-03",
+    "purpose": "Estimated with non-guarantee hedge",
+    "raw_messages": [
+      "陈总：大概周六能出货90件，不过下雨染整慢的话不敢保证"
+    ],
+    "anchor_sent_at": "2026-11-25T10:00:00+08:00",
+    "target_extraction": [
+      {
+        "qty": 90,
+        "time_type": "DISPATCH",
+        "modality": "ESTIMATED",
+        "hedging_flags": [
+          "NOT_GUARANTEED"
+        ]
+      }
+    ]
+  },
+  {
+    "dev_id": "DEV-04",
+    "purpose": "In-chat self-correction superseding prior sentence",
+    "raw_messages": [
+      "周四发120件",
+      "打错字了，周四只能发70件，余50件下周一到仓"
+    ],
+    "anchor_sent_at": "2026-11-25T10:00:00+08:00",
+    "target_extraction": [
+      {
+        "qty": 120,
+        "supersedes_previous_in_msg": true
+      },
+      {
+        "qty": 70,
+        "time_type": "DISPATCH",
+        "modality": "COMMITTED"
+      },
+      {
+        "qty": 50,
+        "time_type": "ARRIVAL",
+        "modality": "COMMITTED"
+      }
+    ]
+  },
+  {
+    "dev_id": "DEV-05",
+    "purpose": "Missing anchor timestamp safeguard",
+    "raw_messages": [
+      "明天上午送到75件"
+    ],
+    "anchor_sent_at": null,
+    "target_extraction": [
+      {
+        "qty": 75,
+        "resolved_iso_time": null,
+        "missing": [
+          "anchor_sent_at"
+        ]
+      }
+    ]
+  },
+  {
+    "dev_id": "DEV-06",
+    "purpose": "Grounded explanation distinguishing window delay from zero ending backlog",
+    "rule_summary": {
+      "first_risk_day": 4,
+      "projected_cumulative_late_qty": 30,
+      "end_backlog_qty": 0
+    },
+    "target_note": "Must explicitly state 30 units delayed during window starting D4 even though ending backlog is 0."
+  }
+]

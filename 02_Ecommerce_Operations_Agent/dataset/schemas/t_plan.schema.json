@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project2_EcommerceOpsAgent_T_PLAN_Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "intent",
+    "requested_company_wide",
+    "alignment_mode",
+    "needs_clarification",
+    "clarification_questions",
+    "steps"
+  ],
+  "properties": {
+    "intent": {
+      "enum": [
+        "QUERY",
+        "COMPARE",
+        "EXPLAIN_ANOMALY",
+        "LOOKUP_DEFINITION",
+        "FOLLOWUP_DRILLDOWN",
+        "UNSUPPORTED_EXTERNAL_ACTION",
+        "OUT_OF_SCOPE"
+      ]
+    },
+    "requested_company_wide": {
+      "type": "boolean"
+    },
+    "alignment_mode": {
+      "enum": [
+        "FULL_COMPLETED_PERIOD",
+        "SAME_PROGRESS_TO_DATE",
+        "SINGLE_PERIOD",
+        "UNSPECIFIED"
+      ]
+    },
+    "needs_clarification": {
+      "type": "boolean"
+    },
+    "clarification_questions": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "steps": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "step_id",
+          "tool",
+          "metric",
+          "period_ids",
+          "shop_filter",
+          "dimension",
+          "top_n"
+        ],
+        "properties": {
+          "step_id": {
+            "type": "string"
+          },
+          "tool": {
+            "enum": [
+              "READ_METRICS",
+              "DECOMPOSE_METRIC",
+              "RANK_DIMENSION",
+              "LOOKUP_DEFINITION"
+            ]
+          },
+          "metric": {
+            "enum": [
+              "NET_SALES",
+              "REFUND_AMOUNT",
+              "GROSS_MARGIN",
+              "COST_COMPONENTS",
+              "CM1"
+            ]
+          },
+          "period_ids": {
+            "type": "array",
+            "maxItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "shop_filter": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "dimension": {
+            "enum": [
+              "TOTAL",
+              "SHOP",
+              "SKU",
+              "NONE"
+            ]
+          },
+          "top_n": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "maximum": 20
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "project": "01_Procurement_Inventory_Risk_Assistant",
+  "suite_version": "PRD_1.0_Benchmark",
+  "executed_at_utc": "2026-11-26T08:51:19.253342+00:00",
+  "python_version": "3.11.7",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "adapter": {
+    "selected_model": "deterministic-template",
+    "spec": {
+      "family": "RuleBaseline",
+      "role": "Route B zero-LLM deterministic baseline & L1-L7 fallback",
+      "context_window": null,
+      "deployment": "In-process Python/Java engine"
+    },
+    "budget": {
+      "max_calls_per_node": 2,
+      "max_calls_per_turn": 4,
+      "timeout_seconds": 30.0
+    }
+  },
+  "tuning_eval_overlap_count": 0,
+  "structured_cases": {
+    "passed": 53,
+    "total": 53
+  },
+  "synthetic_risk_confusion_matrix": {
+    "TP": 15,
+    "FP": 0,
+    "FN": 0,
+    "TN": 10,
+    "precision": 1.0,
+    "recall": 1.0
+  },
+  "mutation_fault_injections": {
+    "killed": 8,
+    "total": 8
+  },
+  "property_conservation_checks": {
+    "passed": 300,
+    "total": 300,
+    "seed": 20261125
+  },
+  "seed_30_pipeline_cases": {
+    "passed": 30,
+    "total": 30,
+    "by_category": {
+      "CAT1_NORMAL_AND_JARGON": 5,
+      "CAT2_AMBIGUITY_AND_CLARIFICATION": 5,
+      "CAT3_MULTI_MSG_AND_CHANGE": 5,
+      "CAT4_MISSING_DRIFT_CONFLICT": 5,
+      "CAT5_SECURITY_AND_BOUNDARY": 5,
+      "CAT6_FAILURE_AND_GUARDRAIL": 5
+    }
+  },
+  "production_metrics_status": {
+    "M01": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_MODEL_AND_ERP",
+    "M02": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_MODEL_AND_ERP",
+    "M03": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_MODEL_AND_ERP",
+    "M04": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_MODEL_AND_ERP",
+    "M05": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_MODEL_AND_ERP",
+    "M06": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_MODEL_AND_ERP",
+    "M07": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_MODEL_AND_ERP",
+    "M08": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_MODEL_AND_ERP",
+    "M09": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_MODEL_AND_ERP",
+    "M10": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_MODEL_AND_ERP"
+  },
+  "file_sha256": {
+    "deterministic_engine.py": "7f3a3e8414c1b86c0435aaa236317f3128857aeecee9f5ecfedf0dc33f84ff88",
+    "structured_cases_v2_1.json": "a5e6ae1866a5427137f864aa6d84fcb6070965655cd3d40fc7defbc7a6070663",
+    "seed_eval_30.json": "8a4aafe85eabd221ac6d45da977aa877eeeab5aa5b05ec93908f1725492eeef6",
+    "tuning_fewshot_dev.json": "8c4e8d86f80c9073995cebee84ec3d901d851184d4f901f93ef598f9ec82c59c"
+  }
+}

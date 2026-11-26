@@ -1,0 +1,41 @@
+{
+  "snapshot_manifest": {
+    "snapshot_id": "SIM-01",
+    "tenant_id": "MERCHANT_M",
+    "accounting_basis": "SHIPPED_NET_V1",
+    "currency": "CNY",
+    "timezone": "Asia/Shanghai",
+    "ad_grain": "SKU",
+    "availability_tier": "TIER_3_FULL_SKU_CM1",
+    "component_watermarks": {
+      "orders": "2026-11-22T23:59:59+08:00",
+      "refunds": "2026-11-22T23:59:59+08:00",
+      "platform_fee": "2026-11-22T23:59:59+08:00",
+      "ad_fee": "2026-11-22T23:59:59+08:00",
+      "fulfillment_fee": "2026-11-22T23:59:59+08:00"
+    }
+  },
+  "decompose_tool_output": {
+    "result_id": "SIM-BRIDGE",
+    "metric_version": "CM1_v1",
+    "periods": [
+      "P0",
+      "P1"
+    ],
+    "delta_cm1": "-6000.00",
+    "primary_component_bridge": {
+      "delta_net_sales": "+20000.00",
+      "delta_cogs_effect": "-12000.00",
+      "delta_platform_effect": "-1000.00",
+      "delta_ad_effect": "-12000.00",
+      "delta_fulfillment_effect": "-1000.00"
+    },
+    "counterfactual_reference": {
+      "expected_cm1_at_p0_rate": "12000.00",
+      "scale_effect": "+2000.00",
+      "rate_shift_gap": "-8000.00",
+      "rounding_residual": "0.00",
+      "rate_delta_pct_pts": "-6.67"
+    }
+  }
+}

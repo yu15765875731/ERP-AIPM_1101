@@ -1,0 +1,73 @@
+{
+  "project": "02_Ecommerce_Operations_Agent",
+  "suite_version": "PRD_V1.0_Benchmark",
+  "executed_at_utc": "2026-11-26T08:51:19.533600+00:00",
+  "python_version": "3.11.7",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "model_architecture": {
+    "planner_model": "fixed-dashboard-template",
+    "explainer_model": "fixed-dashboard-template",
+    "planner_spec": {
+      "tier": "Route_B_Baseline",
+      "role": "Zero-LLM weekly review dashboard & L1-L7 deterministic fallback",
+      "min_context_tokens": null,
+      "private_runtime": "Java/Python Metric Service"
+    },
+    "explainer_spec": {
+      "tier": "Route_B_Baseline",
+      "role": "Zero-LLM weekly review dashboard & L1-L7 deterministic fallback",
+      "min_context_tokens": null,
+      "private_runtime": "Java/Python Metric Service"
+    },
+    "turn_budget": {
+      "max_llm_generations": 5,
+      "max_tool_calls": 6,
+      "max_additional_drilldowns": 2,
+      "wall_clock_timeout_sec": 30.0
+    }
+  },
+  "tuning_eval_overlap_count": 0,
+  "structured_and_guardrail_cases": {
+    "passed": 26,
+    "total": 26
+  },
+  "mutation_fault_injections": {
+    "killed": 6,
+    "total": 6
+  },
+  "property_rational_bridge_checks": {
+    "passed": 200,
+    "total": 200,
+    "seed": 20261125
+  },
+  "seed_30_ops_cases": {
+    "passed": 30,
+    "total": 30,
+    "by_category": {
+      "CAT1_METRIC_AND_BRIDGE": 5,
+      "CAT2_BASIS_AND_COVERAGE": 5,
+      "CAT3_MULTITURN_AND_CLARIFY": 5,
+      "CAT4_CAUSAL_AND_CONFLICT": 5,
+      "CAT5_SECURITY_AND_ACL": 5,
+      "CAT6_GUARDRAIL_AND_CLOSURE": 5
+    }
+  },
+  "production_metrics_status": {
+    "M01": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_LLM_AND_BILLS",
+    "M02": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_LLM_AND_BILLS",
+    "M03": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_LLM_AND_BILLS",
+    "M04": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_LLM_AND_BILLS",
+    "M05": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_LLM_AND_BILLS",
+    "M06": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_LLM_AND_BILLS",
+    "M07": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_LLM_AND_BILLS",
+    "M08": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_LLM_AND_BILLS",
+    "M09": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_LLM_AND_BILLS",
+    "M10": "OFFLINE_CONTRACT_VERIFIED_PENDING_LIVE_LLM_AND_BILLS"
+  },
+  "file_sha256": {
+    "deterministic_engine.py": "dcd44d4a2002abbc7662ebb280a05a7b1a8c16fdbfa528e258fab1ce29e2620e",
+    "sim_01_baseline_snapshot.json": "f80e4983155970237bb849309276bb4d8b3d88fd08990753e145906ae5991204",
+    "t_plan.schema.json": "3863d1a64a6131dcad4d16362128ffe8a63dcee38178cdb8ce8cd8c58428dc23",
+    "t_explain.schema.json": "8ae0490ee93d152de5168d748bb246cddab7f06cc4f8fc8c97062f0a08233f52"
+  }
+}

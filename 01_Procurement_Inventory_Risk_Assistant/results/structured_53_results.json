@@ -1,0 +1,3532 @@
+[
+  {
+    "case_id": "C01",
+    "title": "基准案例：D9 14:00到仓(+24h质检→D10可售80) + D11再确认120",
+    "kind": "rule",
+    "refs": [
+      "I03",
+      "I06",
+      "R-SLA"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 60,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 120,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW",
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        },
+        {
+          "day": 9,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 60,
+          "end_inventory": 0
+        },
+        {
+          "day": 10,
+          "starting_inventory": 0,
+          "supply": 80,
+          "demand": 20,
+          "old_filled": 60,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    },
+    "actual": {
+      "first_risk_day": 7,
+      "predicted_window_delay_qty": 60,
+      "projected_cumulative_late_qty": 60,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 120,
+      "unknown_qty": 120,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        },
+        {
+          "day": 9,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 60,
+          "end_inventory": 0
+        },
+        {
+          "day": 10,
+          "starting_inventory": 0,
+          "supply": 80,
+          "demand": 20,
+          "old_filled": 60,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C02",
+    "title": "无后续供给",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    },
+    "actual": {
+      "first_risk_day": 7,
+      "predicted_window_delay_qty": 80,
+      "projected_cumulative_late_qty": 80,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        },
+        {
+          "day": 9,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 60,
+          "end_inventory": 0
+        },
+        {
+          "day": 10,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 80,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C03",
+    "title": "起点库存足够(200)",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    },
+    "actual": {
+      "first_risk_day": null,
+      "predicted_window_delay_qty": 0,
+      "projected_cumulative_late_qty": 0,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "NO_RISK",
+      "allow_close_no_risk": true,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 200,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 180
+        },
+        {
+          "day": 2,
+          "starting_inventory": 180,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 160
+        },
+        {
+          "day": 3,
+          "starting_inventory": 160,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 140
+        },
+        {
+          "day": 4,
+          "starting_inventory": 140,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 120
+        },
+        {
+          "day": 5,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 6,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 7,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 8,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 9,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 10,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C04",
+    "title": "D7截单前可售80",
+    "kind": "rule",
+    "refs": [
+      "R-TIME"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    },
+    "actual": {
+      "first_risk_day": null,
+      "predicted_window_delay_qty": 0,
+      "projected_cumulative_late_qty": 0,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "NO_RISK",
+      "allow_close_no_risk": true,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 80,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 8,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 9,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 10,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C05",
+    "title": "D7截单后(17:30)可售顺延入D8桶",
+    "kind": "rule",
+    "refs": [
+      "I06",
+      "R-TIME"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW"
+    },
+    "actual": {
+      "first_risk_day": 7,
+      "predicted_window_delay_qty": 20,
+      "projected_cumulative_late_qty": 20,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 80,
+          "demand": 20,
+          "old_filled": 20,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 9,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 10,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C06",
+    "title": "未核对CANDIDATE不计确定供给",
+    "kind": "rule",
+    "refs": [
+      "R-UNKNOWN"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_qty": 80,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    },
+    "actual": {
+      "first_risk_day": 7,
+      "predicted_window_delay_qty": 80,
+      "projected_cumulative_late_qty": 80,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 80,
+      "unknown_qty": 80,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        },
+        {
+          "day": 9,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 60,
+          "end_inventory": 0
+        },
+        {
+          "day": 10,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 80,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C07",
+    "title": "缺失日期归入未知",
+    "kind": "rule",
+    "refs": [
+      "R-UNKNOWN"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_qty": 80,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    },
+    "actual": {
+      "first_risk_day": 7,
+      "predicted_window_delay_qty": 80,
+      "projected_cumulative_late_qty": 80,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 80,
+      "unknown_qty": 80,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        },
+        {
+          "day": 9,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 60,
+          "end_inventory": 0
+        },
+        {
+          "day": 10,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 80,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C08",
+    "title": "D10仅补40未清积压",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 40,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    },
+    "actual": {
+      "first_risk_day": 7,
+      "predicted_window_delay_qty": 80,
+      "projected_cumulative_late_qty": 80,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 40,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        },
+        {
+          "day": 9,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 60,
+          "end_inventory": 0
+        },
+        {
+          "day": 10,
+          "starting_inventory": 0,
+          "supply": 40,
+          "demand": 20,
+          "old_filled": 40,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C09",
+    "title": "D10补100期末结余20",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 60,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 20,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW"
+    },
+    "actual": {
+      "first_risk_day": 7,
+      "predicted_window_delay_qty": 60,
+      "projected_cumulative_late_qty": 60,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 20,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        },
+        {
+          "day": 9,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 60,
+          "end_inventory": 0
+        },
+        {
+          "day": 10,
+          "starting_inventory": 0,
+          "supply": 100,
+          "demand": 20,
+          "old_filled": 60,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C10",
+    "title": "零需求纯供给累积",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 10,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    },
+    "actual": {
+      "first_risk_day": null,
+      "predicted_window_delay_qty": 0,
+      "projected_cumulative_late_qty": 0,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 10,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "NO_RISK",
+      "allow_close_no_risk": true,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 0,
+          "supply": 10,
+          "demand": 0,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 10
+        },
+        {
+          "day": 2,
+          "starting_inventory": 10,
+          "supply": 0,
+          "demand": 0,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 10
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C11",
+    "title": "零库存次日补齐",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 1,
+      "projected_cumulative_late_qty": 10,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW"
+    },
+    "actual": {
+      "first_risk_day": 1,
+      "predicted_window_delay_qty": 10,
+      "projected_cumulative_late_qty": 10,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 10,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 10,
+          "backlog": 10,
+          "end_inventory": 0
+        },
+        {
+          "day": 2,
+          "starting_inventory": 0,
+          "supply": 20,
+          "demand": 10,
+          "old_filled": 10,
+          "current_filled": 10,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C12",
+    "title": "双独立批次逐日衔接",
+    "kind": "rule",
+    "refs": [
+      "R-BATCH"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    },
+    "actual": {
+      "first_risk_day": null,
+      "predicted_window_delay_qty": 0,
+      "projected_cumulative_late_qty": 0,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "NO_RISK",
+      "allow_close_no_risk": true,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 0,
+          "supply": 10,
+          "demand": 10,
+          "old_filled": 0,
+          "current_filled": 10,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 2,
+          "starting_inventory": 0,
+          "supply": 10,
+          "demand": 10,
+          "old_filled": 0,
+          "current_filled": 10,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C13",
+    "title": "窗口外已确认供给单列(known_outside_window_qty)",
+    "kind": "rule",
+    "refs": [
+      "I06"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 3,
+      "projected_cumulative_late_qty": 10,
+      "end_backlog_qty": 10,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 10,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    },
+    "actual": {
+      "first_risk_day": 3,
+      "predicted_window_delay_qty": 10,
+      "projected_cumulative_late_qty": 10,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 10,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 10,
+      "known_outside_window_qty": 10,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 10,
+          "old_filled": 0,
+          "current_filled": 10,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 10
+        },
+        {
+          "day": 2,
+          "starting_inventory": 10,
+          "supply": 0,
+          "demand": 10,
+          "old_filled": 0,
+          "current_filled": 10,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 3,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 10,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 10,
+          "backlog": 10,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C14",
+    "title": "非均匀波峰需求",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 3,
+      "projected_cumulative_late_qty": 10,
+      "end_backlog_qty": 10,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    },
+    "actual": {
+      "first_risk_day": 3,
+      "predicted_window_delay_qty": 10,
+      "projected_cumulative_late_qty": 10,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 10,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 0,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 2,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 3,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 10,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 10,
+          "backlog": 10,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C15",
+    "title": "二次断货波峰测试",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 1,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 10,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    },
+    "actual": {
+      "first_risk_day": 1,
+      "predicted_window_delay_qty": 20,
+      "projected_cumulative_late_qty": 20,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 10,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 10,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 10,
+          "backlog": 10,
+          "end_inventory": 0
+        },
+        {
+          "day": 2,
+          "starting_inventory": 0,
+          "supply": 30,
+          "demand": 10,
+          "old_filled": 10,
+          "current_filled": 10,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 10
+        },
+        {
+          "day": 3,
+          "starting_inventory": 10,
+          "supply": 0,
+          "demand": 10,
+          "old_filled": 0,
+          "current_filled": 10,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 4,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 10,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 10,
+          "backlog": 10,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C16",
+    "title": "单日零需求保底",
+    "kind": "rule",
+    "refs": [
+      "2.4"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 10,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    },
+    "actual": {
+      "first_risk_day": null,
+      "predicted_window_delay_qty": 0,
+      "projected_cumulative_late_qty": 0,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 10,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "NO_RISK",
+      "allow_close_no_risk": true,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 10,
+          "supply": 0,
+          "demand": 0,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 10
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C17",
+    "title": "零数量空批次兼容",
+    "kind": "rule",
+    "refs": [
+      "2.2"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    },
+    "actual": {
+      "first_risk_day": null,
+      "predicted_window_delay_qty": 0,
+      "projected_cumulative_late_qty": 0,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "NO_RISK",
+      "allow_close_no_risk": true,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 0,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C18",
+    "title": "预计+不保证(NOT_GUARANTEED)严禁入桶",
+    "kind": "rule",
+    "refs": [
+      "I11"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 60,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 120,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW"
+    },
+    "actual": {
+      "first_risk_day": 7,
+      "predicted_window_delay_qty": 60,
+      "projected_cumulative_late_qty": 60,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 120,
+      "unknown_qty": 120,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        },
+        {
+          "day": 9,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 60,
+          "end_inventory": 0
+        },
+        {
+          "day": 10,
+          "starting_inventory": 0,
+          "supply": 80,
+          "demand": 20,
+          "old_filled": 60,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C19",
+    "title": "已含入快照供给跳过防重计",
+    "kind": "rule",
+    "refs": [
+      "I01"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    },
+    "actual": {
+      "first_risk_day": null,
+      "predicted_window_delay_qty": 0,
+      "projected_cumulative_late_qty": 0,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "NO_RISK",
+      "allow_close_no_risk": true,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 200,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 180
+        },
+        {
+          "day": 2,
+          "starting_inventory": 180,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 160
+        },
+        {
+          "day": 3,
+          "starting_inventory": 160,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 140
+        },
+        {
+          "day": 4,
+          "starting_inventory": 140,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 120
+        },
+        {
+          "day": 5,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 6,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 7,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 8,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 9,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 10,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C20",
+    "title": "恰等于16:00截单点含等号入当日桶",
+    "kind": "rule",
+    "refs": [
+      "I06"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    },
+    "actual": {
+      "first_risk_day": null,
+      "predicted_window_delay_qty": 0,
+      "projected_cumulative_late_qty": 0,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "NO_RISK",
+      "allow_close_no_risk": true,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 80,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 8,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 9,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 10,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C21",
+    "title": "新品类缺失仓库质检SLA保守归未知(ARRIVAL_ONLY_NO_SLA)",
+    "kind": "rule",
+    "refs": [
+      "I06",
+      "V1"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 7,
+      "projected_cumulative_late_qty": 80,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_qty": 80,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END",
+      "missing_sla_batches": [
+        "B1"
+      ]
+    },
+    "actual": {
+      "first_risk_day": 7,
+      "predicted_window_delay_qty": 80,
+      "projected_cumulative_late_qty": 80,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 80,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 80,
+      "unknown_qty": 80,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [
+        "B1"
+      ],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 2,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 3,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 4,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 5,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 6,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        },
+        {
+          "day": 9,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 60,
+          "end_inventory": 0
+        },
+        {
+          "day": 10,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 80,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C22",
+    "title": "部分收货对账：订购200=60入快照(可用180)+20待检+120再确认",
+    "kind": "rule",
+    "refs": [
+      "I01",
+      "I02"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 10,
+      "projected_cumulative_late_qty": 20,
+      "end_backlog_qty": 20,
+      "end_inventory_qty": 0,
+      "unknown_qty": 140,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END"
+    },
+    "actual": {
+      "first_risk_day": 10,
+      "predicted_window_delay_qty": 20,
+      "projected_cumulative_late_qty": 20,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 20,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 140,
+      "unknown_qty": 140,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_UNRESOLVED_AT_WINDOW_END",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 180,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 160
+        },
+        {
+          "day": 2,
+          "starting_inventory": 160,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 140
+        },
+        {
+          "day": 3,
+          "starting_inventory": 140,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 120
+        },
+        {
+          "day": 4,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        },
+        {
+          "day": 5,
+          "starting_inventory": 100,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 80
+        },
+        {
+          "day": 6,
+          "starting_inventory": 80,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 60
+        },
+        {
+          "day": 7,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 8,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 9,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 10,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C23",
+    "title": "微信自我纠正前句作废(supersedes_discarded)不翻倍累加",
+    "kind": "rule",
+    "refs": [
+      "BC-06"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": 6,
+      "projected_cumulative_late_qty": 40,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW"
+    },
+    "actual": {
+      "first_risk_day": 6,
+      "predicted_window_delay_qty": 40,
+      "projected_cumulative_late_qty": 40,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "RISK_DELAY_RECOVERED_IN_WINDOW",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 60,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 40
+        },
+        {
+          "day": 2,
+          "starting_inventory": 40,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 3,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 4,
+          "starting_inventory": 0,
+          "supply": 40,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 20
+        },
+        {
+          "day": 5,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 6,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 20,
+          "end_inventory": 0
+        },
+        {
+          "day": 7,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 20,
+          "backlog": 40,
+          "end_inventory": 0
+        },
+        {
+          "day": 8,
+          "starting_inventory": 0,
+          "supply": 60,
+          "demand": 20,
+          "old_filled": 40,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C24",
+    "title": "快照超4h过期进入EXPIRED_READONLY禁用无风险担保",
+    "kind": "rule",
+    "refs": [
+      "I05"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 100,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "EXPIRED_SNAPSHOT_NO_GUARANTEE",
+      "allow_close_no_risk": false
+    },
+    "actual": {
+      "first_risk_day": null,
+      "predicted_window_delay_qty": 0,
+      "projected_cumulative_late_qty": 0,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 100,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "EXPIRED_READONLY",
+      "result_validity": "VALID",
+      "card_risk_status": "EXPIRED_SNAPSHOT_NO_GUARANTEE",
+      "allow_close_no_risk": false,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 300,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 280
+        },
+        {
+          "day": 2,
+          "starting_inventory": 280,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 260
+        },
+        {
+          "day": 3,
+          "starting_inventory": 260,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 240
+        },
+        {
+          "day": 4,
+          "starting_inventory": 240,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 220
+        },
+        {
+          "day": 5,
+          "starting_inventory": 220,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 200
+        },
+        {
+          "day": 6,
+          "starting_inventory": 200,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 180
+        },
+        {
+          "day": 7,
+          "starting_inventory": 180,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 160
+        },
+        {
+          "day": 8,
+          "starting_inventory": 160,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 140
+        },
+        {
+          "day": 9,
+          "starting_inventory": 140,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 120
+        },
+        {
+          "day": 10,
+          "starting_inventory": 120,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 100
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "C25",
+    "title": "周五超截止遇周末停工(D2/D3停工)顺延至下周一D4作业日桶",
+    "kind": "rule",
+    "refs": [
+      "I06",
+      "warehouse_calendar_ver"
+    ],
+    "passed": true,
+    "expected": {
+      "first_risk_day": null,
+      "projected_cumulative_late_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_qty": 0,
+      "known_outside_window_qty": 0,
+      "card_risk_status": "NO_RISK"
+    },
+    "actual": {
+      "first_risk_day": null,
+      "predicted_window_delay_qty": 0,
+      "projected_cumulative_late_qty": 0,
+      "actual_occurred_delay_qty": 0,
+      "actual_past_delay_qty": 0,
+      "end_backlog_qty": 0,
+      "end_inventory_qty": 0,
+      "unknown_supply_units": 0,
+      "unknown_qty": 0,
+      "outside_window_qty": 0,
+      "known_outside_window_qty": 0,
+      "missing_sla_batches": [],
+      "freshness": "FRESH",
+      "result_validity": "VALID",
+      "card_risk_status": "NO_RISK",
+      "allow_close_no_risk": true,
+      "ledger": [
+        {
+          "day": 1,
+          "starting_inventory": 20,
+          "supply": 0,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 2,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 0,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 3,
+          "starting_inventory": 0,
+          "supply": 0,
+          "demand": 0,
+          "old_filled": 0,
+          "current_filled": 0,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        },
+        {
+          "day": 4,
+          "starting_inventory": 0,
+          "supply": 20,
+          "demand": 20,
+          "old_filled": 0,
+          "current_filled": 20,
+          "late": 0,
+          "backlog": 0,
+          "end_inventory": 0
+        }
+      ]
+    }
+  },
+  {
+    "case_id": "N01",
+    "title": "负库存拦截",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "INVALID_QUANTITY"
+    },
+    "actual": {
+      "error": "INVALID_QUANTITY",
+      "http_code": 422
+    }
+  },
+  {
+    "case_id": "N02",
+    "title": "负需求拦截",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "INVALID_QUANTITY"
+    },
+    "actual": {
+      "error": "INVALID_QUANTITY",
+      "http_code": 422
+    }
+  },
+  {
+    "case_id": "N03",
+    "title": "布尔值伪装整数拦截",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "INVALID_QUANTITY"
+    },
+    "actual": {
+      "error": "INVALID_QUANTITY",
+      "http_code": 422
+    }
+  },
+  {
+    "case_id": "N04",
+    "title": "负批次量拦截",
+    "kind": "rule",
+    "refs": [
+      "2.2"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "INVALID_QUANTITY"
+    },
+    "actual": {
+      "error": "INVALID_QUANTITY",
+      "http_code": 422
+    }
+  },
+  {
+    "case_id": "N05",
+    "title": "重复批次ID拦截",
+    "kind": "rule",
+    "refs": [
+      "R-BATCH"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "DUPLICATE_BATCH"
+    },
+    "actual": {
+      "error": "DUPLICATE_BATCH",
+      "http_code": 422
+    }
+  },
+  {
+    "case_id": "N06",
+    "title": "第0日非法日期拦截",
+    "kind": "rule",
+    "refs": [
+      "2.3"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "INVALID_DAY"
+    },
+    "actual": {
+      "error": "INVALID_DAY",
+      "http_code": 422
+    }
+  },
+  {
+    "case_id": "N07",
+    "title": "窗口超30天拦截",
+    "kind": "rule",
+    "refs": [
+      "1.2"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "INVALID_WINDOW"
+    },
+    "actual": {
+      "error": "INVALID_WINDOW",
+      "http_code": 422
+    }
+  },
+  {
+    "case_id": "N08",
+    "title": "未换算箱单位拦截",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "UNSUPPORTED_UNIT"
+    },
+    "actual": {
+      "error": "UNSUPPORTED_UNIT",
+      "http_code": 422,
+      "state": "WAITING_INPUT"
+    }
+  },
+  {
+    "case_id": "N09",
+    "title": "库存占用口径未知阻断",
+    "kind": "rule",
+    "refs": [
+      "R-NET"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "MISSING_BASIS"
+    },
+    "actual": {
+      "error": "MISSING_BASIS",
+      "http_code": 422,
+      "state": "WAITING_INPUT"
+    }
+  },
+  {
+    "case_id": "N10",
+    "title": "ERP分页残缺快照阻断",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "INCOMPLETE_SNAPSHOT"
+    },
+    "actual": {
+      "error": "INCOMPLETE_SNAPSHOT",
+      "http_code": 422,
+      "state": "WAITING_INPUT"
+    }
+  },
+  {
+    "case_id": "N11",
+    "title": "活动子批次超open_qty进CONFLICT",
+    "kind": "rule",
+    "refs": [
+      "I02"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "BATCH_EXCEEDS_OPEN"
+    },
+    "actual": {
+      "error": "BATCH_EXCEEDS_OPEN",
+      "http_code": 409,
+      "state": "CONFLICT",
+      "active_unfulfilled_qty": 140,
+      "open_qty": 120
+    }
+  },
+  {
+    "case_id": "N12",
+    "title": "件数浮点数拦截",
+    "kind": "rule",
+    "refs": [
+      "2.1"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "INVALID_QUANTITY"
+    },
+    "actual": {
+      "error": "INVALID_QUANTITY",
+      "http_code": 422
+    }
+  },
+  {
+    "case_id": "N13",
+    "title": "跨表采集时间漂移>60s阻断(SNAPSHOT_DRIFT)",
+    "kind": "rule",
+    "refs": [
+      "I05"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "SNAPSHOT_DRIFT"
+    },
+    "actual": {
+      "error": "SNAPSHOT_DRIFT",
+      "http_code": 409,
+      "state": "WAITING_INPUT"
+    }
+  },
+  {
+    "case_id": "N14",
+    "title": "无权限请求底价字段403阻断",
+    "kind": "rule",
+    "refs": [
+      "L4"
+    ],
+    "passed": true,
+    "expected": {
+      "error": "FIELD_ACL_DENIED"
+    },
+    "actual": {
+      "error": "FIELD_ACL_DENIED",
+      "http_code": 403,
+      "state": "FORBIDDEN"
+    }
+  },
+  {
+    "case_id": "S01",
+    "title": "旧Rev异步写回被CAS拦截标STALE",
+    "kind": "policy",
+    "refs": [
+      "R-REV"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 409,
+      "state": "STALE"
+    },
+    "actual": {
+      "code": 409,
+      "state": "STALE"
+    }
+  },
+  {
+    "case_id": "S02",
+    "title": "匹配Rev写回成功",
+    "kind": "policy",
+    "refs": [
+      "R-REV"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 200,
+      "state": "READY"
+    },
+    "actual": {
+      "code": 200,
+      "state": "READY"
+    }
+  },
+  {
+    "case_id": "S03",
+    "title": "跨租户读取原文403阻断",
+    "kind": "policy",
+    "refs": [
+      "M09"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 403,
+      "visible": false
+    },
+    "actual": {
+      "code": 403,
+      "visible": false
+    }
+  },
+  {
+    "case_id": "S04",
+    "title": "动态撤权后权限指纹失配403拦截缓存",
+    "kind": "policy",
+    "refs": [
+      "I23"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 403,
+      "visible": false
+    },
+    "actual": {
+      "code": 403,
+      "visible": false
+    }
+  },
+  {
+    "case_id": "S05",
+    "title": "同幂等键同请求体安全复用",
+    "kind": "policy",
+    "refs": [
+      "I12"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 200,
+      "reused": true
+    },
+    "actual": {
+      "code": 200,
+      "reused": true
+    }
+  },
+  {
+    "case_id": "S06",
+    "title": "同幂等键异请求体409拒绝",
+    "kind": "policy",
+    "refs": [
+      "I12"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 409,
+      "reused": false
+    },
+    "actual": {
+      "code": 409,
+      "reused": false
+    }
+  },
+  {
+    "case_id": "S07",
+    "title": "不同租户上传相同SHA文件不被误去重吞没",
+    "kind": "policy",
+    "refs": [
+      "I12"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 200,
+      "accepted_as_new_snapshot": true
+    },
+    "actual": {
+      "code": 200,
+      "dedup_skipped": false,
+      "accepted_as_new_snapshot": true
+    }
+  },
+  {
+    "case_id": "S08",
+    "title": "仅保存内部计划流转FOLLOWING且禁外部写",
+    "kind": "policy",
+    "refs": [
+      "R-RECOVERY"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 200,
+      "state": "FOLLOWING",
+      "external_execution": "NOT_AVAILABLE"
+    },
+    "actual": {
+      "code": 200,
+      "state": "FOLLOWING",
+      "external_execution": "NOT_AVAILABLE"
+    }
+  },
+  {
+    "case_id": "S09",
+    "title": "零缺口零未知正常办结(CLOSED_NO_RISK)",
+    "kind": "policy",
+    "refs": [
+      "I04"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 200,
+      "state": "CLOSED_NO_RISK"
+    },
+    "actual": {
+      "code": 200,
+      "state": "CLOSED_NO_RISK"
+    }
+  },
+  {
+    "case_id": "S10",
+    "title": "实物可售回填且重算零缺口进入RESOLVED",
+    "kind": "policy",
+    "refs": [
+      "F04"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 200,
+      "state": "RESOLVED"
+    },
+    "actual": {
+      "code": 200,
+      "state": "RESOLVED"
+    }
+  },
+  {
+    "case_id": "S11",
+    "title": "实物部分回填仍有缺口回READY继续跟进",
+    "kind": "policy",
+    "refs": [
+      "F04"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 200,
+      "state": "READY"
+    },
+    "actual": {
+      "code": 200,
+      "state": "READY"
+    }
+  },
+  {
+    "case_id": "S12",
+    "title": "运营确认需求取消入CLOSED_NOT_APPLICABLE",
+    "kind": "policy",
+    "refs": [
+      "F04"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 200,
+      "state": "CLOSED_NOT_APPLICABLE"
+    },
+    "actual": {
+      "code": 200,
+      "state": "CLOSED_NOT_APPLICABLE"
+    }
+  },
+  {
+    "case_id": "S13",
+    "title": "RESOLVED后发生退货/加单重开入STALE->VALIDATING",
+    "kind": "policy",
+    "refs": [
+      "I04"
+    ],
+    "passed": true,
+    "expected": {
+      "code": 200,
+      "freshness": "STALE",
+      "next_state": "VALIDATING"
+    },
+    "actual": {
+      "code": 200,
+      "freshness": "STALE",
+      "next_state": "VALIDATING",
+      "preserved_prev_audit": "RESOLVED"
+    }
+  },
+  {
+    "case_id": "S14",
+    "title": "单节点连续2次JSON错误立即降级不超预算",
+    "kind": "policy",
+    "refs": [
+      "I07"
+    ],
+    "passed": true,
+    "expected": {
+      "calls_used": 2,
+      "final_mode": "DETERMINISTIC_FALLBACK"
+    },
+    "actual": {
+      "calls_used": 2,
+      "final_mode": "DETERMINISTIC_FALLBACK"
+    }
+  }
+]

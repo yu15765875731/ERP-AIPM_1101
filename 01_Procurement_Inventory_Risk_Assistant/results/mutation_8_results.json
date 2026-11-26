@@ -1,0 +1,42 @@
+[
+  {
+    "mutation": "include_unknown",
+    "case_id": "C18",
+    "killed": true
+  },
+  {
+    "mutation": "double_count_snapshot",
+    "case_id": "C19",
+    "killed": true
+  },
+  {
+    "mutation": "erase_window_delay_on_zero_backlog",
+    "case_id": "C01",
+    "killed": true
+  },
+  {
+    "mutation": "ignore_cutoff",
+    "case_id": "C05",
+    "killed": true
+  },
+  {
+    "mutation": "assume_zero_sla_when_missing",
+    "case_id": "C21",
+    "killed": true
+  },
+  {
+    "mutation": "ignore_table_drift",
+    "case_id": "N13",
+    "killed": true
+  },
+  {
+    "mutation": "ignore_cas_revision",
+    "case_id": "S01",
+    "killed": true
+  },
+  {
+    "mutation": "plan_marks_resolved",
+    "case_id": "S08",
+    "killed": true
+  }
+]
